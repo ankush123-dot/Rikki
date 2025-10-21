@@ -1,0 +1,126 @@
+/* Reset and basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Patrick Hand', cursive;
+  cursor: grab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #4B0082;
+}
+
+body:active {
+  cursor: grabbing;
+}
+
+/* Background Video */
+#bgVideo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100vh;
+  object-fit: contain;
+  object-position: center;
+  z-index: -10;
+  background-color: #fff0f5;
+}
+
+/* Paper Styles (Smaller for mobile) */
+.paper {
+  position: absolute;
+  background-image: url('Background image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 15px;
+  width: 220px; /* smaller width */
+  border-radius: 8px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease-in-out;
+  border: 2px solid #ffc0cb;
+  transform: rotate(0deg);
+  user-select: none;
+  text-align: center;
+  color: #4B0082;
+}
+
+.paper:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.5);
+}
+
+/* Red variant for messages */
+.paper.red {
+  background-color: rgba(255, 228, 225, 0.7);
+  border: 2px solid #ff7f7f;
+  color: #900;
+  box-shadow: 2px 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+/* Regular image styling */
+.paper.image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(255, 105, 180, 0.3);
+  background-color: rgba(255,255,255,0.8);
+  padding: 4px;
+  display: block;
+  margin: auto;
+}
+
+/* Special element images */
+.paper.element img {
+  width: 180px;  /* was 250px */
+  height: 280px; /* was 400px */
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(255, 105, 180, 0.4);
+  display: block;
+  margin: auto;
+  background-color: rgba(255,255,255,0.8);
+  padding: 4px;
+}
+
+/* Paragraph Styling (slightly smaller) */
+.paper p {
+  margin-bottom: 8px;
+  line-height: 1.3;
+  font-size: 20px;  /* was 32px */
+  text-align: center;
+  font-weight: normal;
+  font-style: normal;
+  color: #4B0082;
+}
+
+/* Optional floating button (Reset or Surprise) */
+#resetBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 8px 16px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+  font-family: 'Patrick Hand', cursive;
+}
+
+#resetBtn:hover {
+  background-color: #ff1493;
+}
